@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ProVia - Dezvoltare personală și consultanță în carieră</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    body {
+    body <!-- Butonul aici -->
+  <button id="play-music-btn" style="
+    margin: 30px auto;
+    display: block;
+    background-color: #4ade80;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  ">Pornește muzica de meditație</button>
+
+  <!-- Restul conținutului tău -->
+
+  <!-- La finalul paginii pui scriptul -->
+  <audio id="background-music" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/02/25/audio_70f6761f36.mp3?filename=relaxing-music-11577.mp3" type="audio/mpeg">
+    Browserul tău nu suportă audio.
+  </audio>
+
+  <script>
+    const btn = document.getElementById('play-music-btn');
+    const audio = document.getElementById('background-music');
+
+    btn.addEventListener('click', () => {
+      audio.play();
+      btn.style.backgroundColor = '#22c55e';
+      btn.textContent = 'Muzica rulează...';
+      btn.disabled = true;
+    });
+  </script>
+</body> {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
@@ -46,71 +80,13 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
-    button:hover:not(:disabled) {
+    button:hover {
       background-color: #2f2f72;
-    }
-    #play-music-btn {
-      margin: 30px auto;
-      display: block;
-      background-color: #4ade80;
-      border: none;
-      color: white;
-      padding: 12px 30px;
-      font-size: 1.2rem;
-      border-radius: 15px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    #play-music-btn:disabled {
-      background-color: #22c55e;
-      cursor: not-allowed;
-    }
-    /* Citations styling */
-    #citate-motivationale article {
-      background: #fff;
-      border-left: 6px solid #3498db;
-      padding: 15px 20px;
-      margin-bottom: 15px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    #citate-motivationale article footer {
-      text-align: right;
-      font-style: italic;
-      color: #7f8c8d;
-    }
-    /* Video links container */
-    .video-links-container {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .video-link-card {
-      width: 250px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      text-align: center;
-      text-decoration: none;
-      color: #2c3e50;
-      transition: transform 0.2s ease;
-    }
-    .video-link-card:hover {
-      transform: translateY(-5px);
-    }
-    .video-link-card img {
-      width: 100%;
-      border-radius: 10px 10px 0 0;
-    }
-    .video-link-card h4 {
-      margin: 10px;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>ProVia</h1>
     <p>Descoperă potențialul tău. Crește. Reușește.</p>
@@ -121,159 +97,288 @@
     </nav>
   </header>
 
-  <button id="play-music-btn">Pornește muzica de meditație</button>
-  <audio id="background-music" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/02/25/audio_70f6761f36.mp3?filename=relaxing-music-11577.mp3" type="audio/mpeg" />
-    Browserul tău nu suportă audio.
-  </audio>
-
   <main>
     <section id="despre">
       <h2>Despre ProVia</h2>
       <p>ProVia este spațiul unde dezvoltarea personală și consultanța în carieră prind contur. Misiunea noastră este să te ajutăm să capeți încredere în tine și să îți urmezi direcția profesională cu claritate și curaj.</p>
     </section>
-
     <section id="poveste">
-      <h2>Poveste inspirațională</h2>
-      <p>Ana era o tânără plină de visuri, dar blocată de teama eșecului. Simțea că nu e suficient de bună, că nu merită mai mult.</p>
-      <p>A venit la noi timid, nesigură, și cu o voce tremurândă ne-a spus: „Nu știu cine sunt. Știu doar că nu sunt fericită.”</p>
-      <p>Prin ședințe de coaching, exerciții de autocunoaștere și multă susținere, Ana a început să-și descopere resursele interioare. Pas cu pas, a învățat să aibă încredere în ea, să vorbească despre nevoile și visurile sale. Astăzi, Ana conduce propriul atelier de creație și inspiră alte femei să își urmeze visul.</p>
-      <p>Fiecare om are o „Ana” în interior – un potențial care așteaptă să fie activat. Tu când începi călătoria ta?</p>
-
+  <h2>Poveste inspirațională</h2>
+  <p>
+    Ana era o tânără plină de visuri, dar blocată de teama eșecului. Simțea că nu e suficient de bună, că nu merită mai mult.
+    A venit la noi timid, nesigură, și cu o voce tremurândă ne-a spus: „Nu știu cine sunt. Știu doar că nu sunt fericită.”
+  </p>
+  <p>
+    Prin ședințe de coaching, exerciții de autocunoaștere și multă susținere, Ana a început să-și descopere resursele interioare.
+    Pas cu pas, a învățat să aibă încredere în ea, să vorbească despre nevoile și visurile sale. Astăzi, Ana conduce propriul atelier de creație și inspiră alte femei să își urmeze visul.
+  </p>
+  <p>
+    Fiecare om are o „Ana” în interior – un potențial care așteaptă să fie activat. Tu când începi călătoria ta?
+  </p>
       <section id="citate-motivationale" style="background:#f9f9f9; padding:40px 20px; font-family: Arial, sans-serif; color:#333;">
-        <h2 style="text-align:center; color:#2c3e50; margin-bottom:30px; font-weight:700; font-size:2em;">
-          CITATE MOTIVAȚIONALE TRANSMISE DE OAMENI MOTIVAȚI
-        </h2>
+  <h2 style="text-align:center; color:#2c3e50; margin-bottom:30px; font-weight:700; font-size:2em;">
+    CITATE MOTIVAȚIONALE TRANSMISE DE OAMENI MOTIVAȚI
+  </h2>
 
-        <div style="max-width:900px; margin:0 auto;">
-          <article>
-            <p>„Fii schimbarea pe care vrei să o vezi în lume.”</p>
-            <footer>– Mahatma Gandhi</footer>
-          </article>
+  <div style="max-width:900px; margin:0 auto;">
+    <article style="background:#fff; border-left:6px solid #3498db; padding:15px 20px; margin-bottom:15px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+      <p>„Fii schimbarea pe care vrei să o vezi în lume.”</p>
+      <footer style="text-align:right; font-style:italic; color:#7f8c8d;">– Mahatma Gandhi</footer>
+    </article>
 
-          <article>
-            <p>„Nu aștepta. Niciodată nu va fi momentul potrivit.”</p>
-            <footer>– Napoleon Hill</footer>
-          </article>
+    <article style="background:#fff; border-left:6px solid #3498db; padding:15px 20px; margin-bottom:15px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+      <p>„Nu aștepta. Niciodată nu va fi momentul potrivit.”</p>
+      <footer style="text-align:right; font-style:italic; color:#7f8c8d;">– Napoleon Hill</footer>
+    </article>
 
-          <article>
-            <p>„Succesul este suma unor eforturi mici, repetate zi de zi.”</p>
-            <footer>– Robert Collier</footer>
-          </article>
+    <article style="background:#fff; border-left:6px solid #3498db; padding:15px 20px; margin-bottom:15px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+      <p>„Succesul este suma unor eforturi mici, repetate zi de zi.”</p>
+      <footer style="text-align:right; font-style:italic; color:#7f8c8d;">– Robert Collier</footer>
+    </article>
 
-          <article>
-            <p>„Cea mai mare glorie nu constă în a nu cădea niciodată, ci în a te ridica de fiecare dată.”</p>
-            <footer>– Confucius</footer>
-          </article>
+    <!-- Mai jos alte 47 de citate în același format -->
 
-          <article>
-            <p>„Ai grijă la gândurile tale, devin cuvinte. Cuvintele devin acțiuni.”</p>
-            <footer>– Lao Tzu</footer>
-          </article>
+    <article style="background:#fff; border-left:6px solid #3498db; padding:15px 20px; margin-bottom:15px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+      <p>„Cea mai mare glorie nu constă în a nu cădea niciodată, ci în a te ridica de fiecare dată.”</p>
+      <footer style="text-align:right; font-style:italic; color:#7f8c8d;">– Confucius</footer>
+    </article>
 
-          <article>
-            <p>„Viața începe acolo unde începe frica.”</p>
-            <footer>– Osho</footer>
-          </article>
+    <article style="background:#fff; border-left:6px solid #3498db; padding:15px 20px; margin-bottom:15px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+      <p>„Ai grijă la gândurile tale, devin cuvinte. Cuvintele devin acțiuni.”</p>
+      <footer style="text-align:right; font-style:italic; color:#7f8c8d;">– Lao Tzu</footer>
+    </article>
 
-          <article>
-            <p>„Eșecul este doar o oportunitate de a începe din nou, de data aceasta mai inteligent.”</p>
-            <footer>– Henry Ford</footer>
-          </article>
+    <article style="background:#fff; border-left:6px solid #3498db; padding:15px 20px; margin-bottom:15px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+      <p>„Viața începe acolo unde începe frica.”</p>
+      <footer style="text-align:right; font-style:italic; color:#7f8c8d;">– Osho</footer>
+    </article>
 
-          <article>
-            <p>„Cei care nu învață din istorie sunt condamnați să o repete.”</p>
-            <footer>– George Santayana</footer>
-          </article>
-          
-          <article>
-            <p>„Nu este niciodată prea târziu să devii ceea ce ai fi putut fi.”</p>
-            <footer>– George Eliot</footer>
-          </article>
-          
-          <article>
-            <p>„Lucrurile bune vin către cei care așteaptă, dar cele mai bune vin către cei care acționează.”</p>
-            <footer>– Anonim</footer>
-          </article>
-        </div>
-      </section>
-    </section>
+    <article style="background:#fff; border-left:6px solid #3498db; padding:15px 20px; margin-bottom:15px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+      <p>„Eșecul este doar o oportunitate de a începe din nou, de data aceasta mai inteligent.”</p>
+      <footer style="text-align:right; font-style:italic; color:#7f8c8d;">– Henry Ford</footer>
+    </article>
 
+    <article style="background:#fff; border-left:6px solid #3498db; padding:15px 20px; margin-bottom:15px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+      <p>„Cei care nu învață din istorie sunt condamnați să o repete.”</p>
+      <footer style="text-align:right; font-style:italic; color:#7f8c8d;">– George Santayana</footer>
+    </article>
+    
+    <article style="background:#fff; border-left:6px solid #3498db; padding:15px 20px; margin-bottom:15px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+      <p>„Nu este niciodată prea târziu să devii ceea ce ai fi putut fi.”</p>
+      <footer style="text-align:right; font-style:italic; color:#7f8c8d;">– George Eliot</footer>
+    </article>
+    
+    <article style="background:#fff; border-left:6px solid #3498db; padding:15px 20px; margin-bottom:15px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+      <p>„Lucrurile bune vin către cei care așteaptă, dar cele mai bune vin către cei care acționează.”</p>
+      <footer style="text-align:right; font-style:italic; color:#7f8c8d;">– Anonim</footer>
+    </article>
+  </div>
+</section>
+
+</section>
     <section id="Suport">
       <h2>Suport în:</h2>
       <ul>
         <li>Consiliere vocațională și de carieră</li>
         <li>Coaching pentru încredere în sine</li>
-        <li>Ghidare în dezvoltarea abilităților personale</li>
-        <li>Sprijin în gestionarea stresului și anxietății</li>
-        <li>Planificarea obiectivelor pe termen lung</li>
+        <li>Metode de motivare</li>
+        <li>Discuții libere</li>
       </ul>
     </section>
+    <section id="doza-motivatiei" style="background:#eef6fb; padding:50px 10%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#2c3e50;">
+  <h2 style="text-align:center; font-size:2.5rem; margin-bottom:40px; font-weight:700;">
+    Ia-ți doza de motivație
+  </h2>
 
-    <section id="filme">
-      <h2>Filme motivaționale</h2>
-      <div class="video-links-container">
-        <a class="video-link-card" href="https://www.youtube.com/watch?v=_t-N0SE5y0M" target="_blank" rel="noopener noreferrer">
-          <img src="https://img.youtube.com/vi/_t-N0SE5y0M/hqdefault.jpg" alt="Filmul 1" />
-          <h4>Filmul 1</h4>
-        </a>
-        <a class="video-link-card" href="https://www.youtube.com/watch?v=Q71dJ9A0a0Y" target="_blank" rel="noopener noreferrer">
-          <img src="https://img.youtube.com/vi/Q71dJ9A0a0Y/hqdefault.jpg" alt="Filmul 2" />
-          <h4>Filmul 2</h4>
-        </a>
-        <a class="video-link-card" href="https://www.youtube.com/watch?v=tCyGGXn6wLw" target="_blank" rel="noopener noreferrer">
-          <img src="https://img.youtube.com/vi/tCyGGXn6wLw/hqdefault.jpg" alt="Filmul 3" />
-          <h4>Filmul 3</h4>
-        </a>
-        <a class="video-link-card" href="https://www.youtube.com/watch?v=YHgC0o0iHCQ" target="_blank" rel="noopener noreferrer">
-          <img src="https://img.youtube.com/vi/YHgC0o0iHCQ/hqdefault.jpg" alt="Filmul 4" />
-          <h4>Filmul 4</h4>
-        </a>
-      </div>
-    </section>
+  <div style="display:flex; flex-wrap: wrap; gap:40px; justify-content:center;">
+<section id="top-carti-motivationale" style="background:#f9fbfc; padding:50px 10%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#2c3e50;">
+  <h2 style="text-align:center; font-size:2.5rem; margin-bottom:40px; font-weight:700;">
+    Top 10 cele mai bune cărți motivaționale
+  </h2>
 
-    <section id="carti">
-      <h2>Cărți recomandate</h2>
+  <div style="max-width:900px; margin:auto;">
+    <ol style="font-size:1.15rem; line-height:1.8; padding-left:20px; color:#34495e;">
+      <li><strong>„Puterea prezentului”</strong> – Eckhart Tolle</li>
+      <li><strong>„De la idee la bani”</strong> – Napoleon Hill</li>
+      <li><strong>„Cele 7 deprinderi ale persoanelor eficace”</strong> – Stephen R. Covey</li>
+      <li><strong>„Gândește și vei fi bogat”</strong> – Napoleon Hill</li>
+      <li><strong>„Arta subtilă a nepăsării”</strong> – Mark Manson</li>
+      <li><strong>„Curajul de a fi vulnerabil”</strong> – Brené Brown</li>
+      <li><strong>„Atomic Habits”</strong> – James Clear</li>
+      <li><strong>„Omul în căutarea sensului vieții”</strong> – Viktor E. Frankl</li>
+      <li><strong>„Cum să-ți faci prieteni și să influențezi oameni”</strong> – Dale Carnegie</li>
+      <li><strong>„Mindset: O nouă psihologie a succesului”</strong> – Carol S. Dweck</li>
+    </ol>
+  </div>
+</section>
+<section id="video-links" class="container">
+  <h3>Videouri motivaționale recomandate</h3>
+  <div class="video-links-container">
+    <a href="https://www.youtube.com/watch?v=ZXsQAXx_ao0" target="_blank" class="video-link-card" rel="noopener noreferrer">
+      <img src="https://img.youtube.com/vi/ZXsQAXx_ao0/hqdefault.jpg" alt="Motivație - Scurt discurs" />
+      <h4>Scurt discurs motivațional</h4>
+    </a>
+    <a href="https://www.youtube.com/watch?v=2Lz0VOltZKA" target="_blank" class="video-link-card" rel="noopener noreferrer">
+      <img src="https://img.youtube.com/vi/2Lz0VOltZKA/hqdefault.jpg" alt="Discurs de motivație de 5 minute" />
+      <h4>Discurs motivațional de 5 minute</h4>
+    </a>
+    <a href="https://www.youtube.com/watch?v=mgmVOuLgFB0" target="_blank" class="video-link-card" rel="noopener noreferrer">
+      <img src="https://img.youtube.com/vi/mgmVOuLgFB0/hqdefault.jpg" alt="Never Give Up - Motivational Video" />
+      <h4>Never Give Up - Motivational Video</h4>
+    </a>
+  </div>
+</section>
+
+  <!-- Sugestii filme -->
+  <div style="max-width:700px; margin:50px auto 0 auto; background:#dbe9f4; padding:30px 40px; border-radius:15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+    <h3 style="font-weight:700; margin-bottom:25px; text-align:center; color:#2c3e50;">Sugestii de filme motivaționale</h3>
+    <ul style="list-style: none; padding-left: 0; font-size:1.1rem; color:#34495e; line-height:1.7;">
+      <li>• <a href="https://www.imdb.com/title/tt0454921/" target="_blank" rel="noopener" style="color:#2980b9; text-decoration:none;">The Pursuit of Happyness (2006)</a></li>
+      <li>• <a href="https://www.imdb.com/title/tt0111257/" target="_blank" rel="noopener" style="color:#2980b9; text-decoration:none;">Dead Poets Society (1989)</a></li>
+      <li>• <a href="https://www.imdb.com/title/tt1028532/" target="_blank" rel="noopener" style="color:#2980b9; text-decoration:none;">The Blind Side (2009)</a></li>
+      <li>• <a href="https://www.imdb.com/title/tt0407887/" target="_blank" rel="noopener" style="color:#2980b9; text-decoration:none;">Million Dollar Baby (2004)</a></li>
+      <li>• <a href="https://www.imdb.com/title/tt0405159/" target="_blank" rel="noopener" style="color:#2980b9; text-decoration:none;">Remember the Titans (2000)</a></li>
+    </ul>
+  </div>
+</section>
+     <section id="quiz-motivațional">
+      <h4>Servicii</h4>
       <ul>
-        <li><a href="https://www.goodreads.com/book/show/37474737-the-subtle-art-of-not-giving-a-f_ck" target="_blank" rel="noopener noreferrer">The Subtle Art of Not Giving a F*ck - Mark Manson</a></li>
-        <li><a href="https://www.goodreads.com/book/show/40121378-you-are-a-badass" target="_blank" rel="noopener noreferrer">You Are a Badass - Jen Sincero</a></li>
-        <li><a href="https://www.goodreads.com/book/show/6596.The_Seven_Habits_of_Highly_Effective_People" target="_blank" rel="noopener noreferrer">The 7 Habits of Highly Effective People - Stephen R. Covey</a></li>
-        <li><a href="https://www.goodreads.com/book/show/13571771-daring-greatly" target="_blank" rel="noopener noreferrer">Daring Greatly - Brené Brown</a></li>
-      </ul>
-    </section>
+    <section id="quiz-motivațional" style="background:#f0f8ff; padding:40px 10%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#2c3e50; max-width:700px; margin:auto; border-radius:15px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
+  <h2 style="text-align:center; font-weight:700; margin-bottom:30px;">Quiz: Ce tip de motivație ți se potrivește?</h2>
+  <section id="quiz-motivațional" style="background:#ffffff; padding:50px 15%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#2c3e50; max-width:800px; margin:60px auto; border-radius:12px; box-shadow: 0 10px 35px rgba(0,0,0,0.1);">
+  <h4 style="text-align:center; font-weight:700; font-size:2.5rem; margin-bottom:40px; color:#1a3e72;">
+    Quiz: Ce tip de motivație ți se potrivește?
+  </h4>
+  
+  <form id="quizForm" style="font-size:1.15rem; line-height:1.8; color:#34495e;">
+    <ol style="padding-left:25px;">
 
+      <li style="margin-bottom:30px;">
+        <p style="font-weight:600; margin-bottom:12px;">1. Ce te motivează cel mai mult să lucrezi la un proiect?</p>
+        <label style="display:block; margin-bottom:8px; cursor:pointer;">
+          <input type="radio" name="q1" value="3" required style="margin-right:10px; cursor:pointer;"> Să ating un obiectiv clar și măsurabil
+        </label>
+        <label style="display:block; margin-bottom:8px; cursor:pointer;">
+          <input type="radio" name="q1" value="2" style="margin-right:10px; cursor:pointer;"> Să înveți ceva nou și să crești personal
+        </label>
+        <label style="display:block; margin-bottom:8px; cursor:pointer;">
+          <input type="radio" name="q1" value="1" style="margin-right:10px; cursor:pointer;"> Să ajut alți oameni și să fac o diferență
+        </label>
+      </li>
+
+      <li style="margin-bottom:30px;">
+        <p style="font-weight:600; margin-bottom:12px;">2. Cum preferi să-ți setezi obiectivele?</p>
+        <label style="display:block; margin-bottom:8px; cursor:pointer;">
+          <input type="radio" name="q2" value="3" required style="margin-right:10px; cursor:pointer;"> Clar definite, cu termene precise
+        </label>
+        <label style="display:block; margin-bottom:8px; cursor:pointer;">
+          <input type="radio" name="q2" value="2" style="margin-right:10px; cursor:pointer;"> Flexibil, adaptabil la situații
+        </label>
+        <label style="display:block; margin-bottom:8px; cursor:pointer;">
+          <input type="radio" name="q2" value="1" style="margin-right:10px; cursor:pointer;"> Inspirate de valori și scopuri personale
+        </label>
+      </li>
+
+      <li style="margin-bottom:30px;">
+        <p style="font-weight:600; margin-bottom:12px;">3. Care e motorul tău principal când întâmpini o provocare?</p>
+        <label style="display:block; margin-bottom:8px; cursor:pointer;">
+          <input type="radio" name="q3" value="3" required style="margin-right:10px; cursor:pointer;"> Dorința de succes și recunoaștere
+        </label>
+        <label style="display:block; margin-bottom:8px; cursor:pointer;">
+          <input type="radio" name="q3" value="2" style="margin-right:10px; cursor:pointer;"> Curiozitatea și dorința de a învăța
+        </label>
+        <label style="display:block; margin-bottom:8px; cursor:pointer;">
+          <input type="radio" name="q3" value="1" style="margin-right:10px; cursor:pointer;"> Nevoia de a contribui și a susține pe alții
+        </label>
+      </li>
+
+      <li style="margin-bottom:30px;">
+        <p style="font-weight:600; margin-bottom:12px;">4. Ce fel de feedback te ajută cel mai mult?</p>
+        <label style="display:block; margin-bottom:8px; cursor:pointer;">
+          <input type="radio" name="q4" value="3" required style="margin-right:10px; cursor:pointer;"> Recunoaștere publică și laude
+        </label>
+        <label style="display:block; margin-bottom:8px; cursor:pointer;">
+          <input type="radio" name="q4" value="2" style="margin-right:10px; cursor:pointer;"> Feedback constructiv și sugestii
+        </label>
+        <label style="display:block; margin-bottom:8px; cursor:pointer;">
+          <input type="radio" name="q4" value="1" style="margin-right:10px; cursor:pointer;"> Încurajări și susținere emoțională
+        </label>
+      </li>
+
+      <li style="margin-bottom:30px;">
+        <p style="font-weight:600; margin-bottom:12px;">5. Care frază te reprezintă cel mai bine?</p>
+        <label style="display:block; margin-bottom:8px; cursor:pointer;">
+          <input type="radio" name="q5" value="3" required style="margin-right:10px; cursor:pointer;"> „Vreau să realizez ceva mare”
+        </label>
+        <label style="display:block; margin-bottom:8px; cursor:pointer;">
+          <input type="radio" name="q5" value="2" style="margin-right:10px; cursor:pointer;"> „Vreau să devin o versiune mai bună a mea”
+        </label>
+        <label style="display:block; margin-bottom:8px; cursor:pointer;">
+          <input type="radio" name="q5" value="1" style="margin-right:10px; cursor:pointer;"> „Vreau să fac lumea un loc mai bun”
+        </label>
+      </li>
+
+    </ol>
+
+    <div style="text-align:center; margin-top: 30px;">
+      <button type="submit" style="background:#1a73e8; color:#fff; padding:14px 40px; font-size:1.3rem; border:none; border-radius:10px; cursor:pointer; box-shadow: 0 5px 15px rgba(26,115,232,0.4); transition: background-color 0.3s;">
+        Vezi rezultatul
+      </button>
+      <button type="button" id="resetBtn" style="background:#e0474c; color:#fff; padding:14px 40px; font-size:1.3rem; border:none; border-radius:10px; cursor:pointer; box-shadow: 0 5px 15px rgba(224,71,76,0.4); transition: background-color 0.3s; margin-left: 20px;">
+        Resetează quiz-ul
+      </button>
+    </div>
+  </form>
+
+  <div id="quizResult" style="margin-top:40px; font-size:1.4rem; font-weight:700; text-align:center; color:#2c3e50; opacity: 0; transition: opacity 0.5s ease-in-out;"></div>
+</section>
+
+<script>
+  const form = document.getElementById('quizForm');
+  const resultDiv = document.getElementById('quizResult');
+  const resetBtn = document.getElementById('resetBtn');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    let totalScore = 0;
+    for(let i=1; i<=5; i++){
+      const q = form['q'+i];
+      if(q.value){
+        totalScore += parseInt(q.value);
+      }
+    }
+
+    let message = '';
+    if(totalScore >= 13) {
+      message = 'Ești motivat de succes și recunoaștere! Îți place să setezi obiective clare și să atingi performanțe mari.';
+    } else if(totalScore >= 8) {
+      message = 'Motivația ta vine din dorința de creștere personală și învățare continuă. Ești deschis la adaptare și dezvoltare.';
+    } else {
+      message = 'Ești motivat de dorința de a ajuta și de a face o diferență în lume. Ai o inimă mare și cauți sens în tot ce faci.';
+    }
+
+    resultDiv.textContent = message;
+    resultDiv.style.opacity = '1';
+  });
+
+  resetBtn.addEventListener('click', () => {
+    form.reset();
+    resultDiv.style.opacity = '0';
+    resultDiv.textContent = '';
+  });
+</script>
     <section id="contact">
-      <h2>Contactează-ne</h2>
-      <form>
-        <label for="nume">Nume:</label>
-        <input type="text" id="nume" name="nume" required />
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-        
-        <label for="mesaj">Mesaj:</label>
-        <textarea id="mesaj" name="mesaj" rows="5" required></textarea>
-        
-        <button type="submit">Trimite</button>
-      </form>
+      <h2>Contact</h2>
+      <p>Ai o întrebare sau vrei să te înscrii la o sesiune? Trimite-ne un mesaj:</p>
+</form>
+      <p>Scrie-ne direct la: <strong>al_provia@yahoo.com</strong></p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 ProVia. Toate drepturile rezervate.</p>
+    <p>&copy; 2025 ProVia. Toate drepturile rezervate.</p>
   </footer>
-
-  <script>
-    const btn = document.getElementById('play-music-btn');
-    const audio = document.getElementById('background-music');
-
-    btn.addEventListener('click', () => {
-      audio.play();
-      btn.textContent = 'Muzica rulează...';
-      btn.disabled = true;
-    });
-  </script>
-
 </body>
-</html
-
+</html>
