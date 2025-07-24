@@ -6,7 +6,40 @@
   <title>ProVia - Dezvoltare personală și consultanță în carieră</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body {
+    body <!-- Butonul aici -->
+  <button id="play-music-btn" style="
+    margin: 30px auto;
+    display: block;
+    background-color: #4ade80;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  ">Pornește muzica de meditație</button>
+
+  <!-- Restul conținutului tău -->
+
+  <!-- La finalul paginii pui scriptul -->
+  <audio id="background-music" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/02/25/audio_70f6761f36.mp3?filename=relaxing-music-11577.mp3" type="audio/mpeg">
+    Browserul tău nu suportă audio.
+  </audio>
+
+  <script>
+    const btn = document.getElementById('play-music-btn');
+    const audio = document.getElementById('background-music');
+
+    btn.addEventListener('click', () => {
+      audio.play();
+      btn.style.backgroundColor = '#22c55e';
+      btn.textContent = 'Muzica rulează...';
+      btn.disabled = true;
+    });
+  </script>
+</body> {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
@@ -143,8 +176,8 @@
 </section>
 
 </section>
-    <section id="servicii">
-      <h2>Servicii</h2>
+    <section id="Suport">
+      <h2>Suport în:</h2>
       <ul>
         <li>Consiliere vocațională și de carieră</li>
         <li>Coaching pentru încredere în sine</li>
@@ -178,28 +211,23 @@
     </ol>
   </div>
 </section>
-    <!-- Videoclipuri motivaționale -->
-    <div style="flex:1 1 600px; max-width:650px;">
-      <h3 style="font-weight:700; margin-bottom:20px; text-align:center;">Videoclipuri motivaționale</h3>
-      <div style="display:grid; gap:25px;">
-
-        <iframe 
-          width="100%" height="315" 
-          src="https://youtu.be/S6MZPUOa6J0?feature=shared" 
-          title="Motivational Speech 2" frameborder="0" allowfullscreen
-          style="border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.1);"
-        ></iframe>
-
-        <iframe 
-          width="100%" height="315" 
-          src="https://www.youtube.com/embed/_Z5OookwOoY" 
-          style="border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.1);"
-        ></iframe>
-
-      </div>
-    </div>
-
+<section id="video-links" class="container">
+  <h3>Videouri motivaționale recomandate</h3>
+  <div class="video-links-container">
+    <a href="https://www.youtube.com/watch?v=ZXsQAXx_ao0" target="_blank" class="video-link-card" rel="noopener noreferrer">
+      <img src="https://img.youtube.com/vi/ZXsQAXx_ao0/hqdefault.jpg" alt="Motivație - Scurt discurs" />
+      <h4>Scurt discurs motivațional</h4>
+    </a>
+    <a href="https://www.youtube.com/watch?v=2Lz0VOltZKA" target="_blank" class="video-link-card" rel="noopener noreferrer">
+      <img src="https://img.youtube.com/vi/2Lz0VOltZKA/hqdefault.jpg" alt="Discurs de motivație de 5 minute" />
+      <h4>Discurs motivațional de 5 minute</h4>
+    </a>
+    <a href="https://www.youtube.com/watch?v=mgmVOuLgFB0" target="_blank" class="video-link-card" rel="noopener noreferrer">
+      <img src="https://img.youtube.com/vi/mgmVOuLgFB0/hqdefault.jpg" alt="Never Give Up - Motivational Video" />
+      <h4>Never Give Up - Motivational Video</h4>
+    </a>
   </div>
+</section>
 
   <!-- Sugestii filme -->
   <div style="max-width:700px; margin:50px auto 0 auto; background:#dbe9f4; padding:30px 40px; border-radius:15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
