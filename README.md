@@ -77,33 +77,9 @@
     input[type="submit"]:hover {
       background-color: #5b4891;
     }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>ProVia</h1>
-    <p><strong>Profesional • Viață • Viziune</strong></p>
-    <p>Coaching și consultanță pentru oameni care vor mai mult de la viață și carieră</p>
     <a href="#contact" class="btn">Programează o sesiune</a>
   </header>
 
-  <nav>
-    <a href="#despre">Despre</a>
-    <a href="#servicii">Servicii</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="despre">
-    <h2>Despre mine</h2>
-    <p>Sunt Andreea Luchian, coach certificat în leadership, formator și specialist în resurse umane, licențiată în management. Misiunea mea este de a ajuta oamenii să ajungă la potențialul lor maxim, să aibă încredere în ei și în personalitatea lor. Cred că fiecare persoană merită să trăiască o viață autentică și echilibrată.</p>
-  </section>
-
-  <section id="servicii">
-    <h2>Servicii</h2>
-    <ul>
-      <li><strong>Coaching de viață:</strong> obiective personale, echilibru, mindset</li>
-      <li><strong>Consultanță în carieră:</strong> orientare profesională, schimbări în carieră</li>
-    </ul>
     <h3>Pachete disponibile:</h3>
     <ul>
       <li>Sesiune unică – 150 lei</li>
