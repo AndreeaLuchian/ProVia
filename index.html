@@ -213,6 +213,97 @@
     </ul>
   </div>
 </section>
+    <section id="quiz-motivațional" style="background:#f0f8ff; padding:40px 10%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#2c3e50; max-width:700px; margin:auto; border-radius:15px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
+  <h2 style="text-align:center; font-weight:700; margin-bottom:30px;">Quiz: Ce tip de motivație ți se potrivește?</h2>
+  
+  <form id="quizForm">
+    <ol style="padding-left:20px;">
+
+      <li style="margin-bottom:20px;">
+        <p><strong>1. Ce te motivează cel mai mult să lucrezi la un proiect?</strong></p>
+        <label><input type="radio" name="q1" value="3" required> Să ating un obiectiv clar și măsurabil</label><br>
+        <label><input type="radio" name="q1" value="2"> Să înveți ceva nou și să crești personal</label><br>
+        <label><input type="radio" name="q1" value="1"> Să ajut alți oameni și să fac o diferență</label>
+      </li>
+
+      <li style="margin-bottom:20px;">
+        <p><strong>2. Cum preferi să-ți setezi obiectivele?</strong></p>
+        <label><input type="radio" name="q2" value="3" required> Clar definite, cu termene precise</label><br>
+        <label><input type="radio" name="q2" value="2"> Flexibil, adaptabil la situații</label><br>
+        <label><input type="radio" name="q2" value="1"> Inspirate de valori și scopuri personale</label>
+      </li>
+
+      <li style="margin-bottom:20px;">
+        <p><strong>3. Care e motorul tău principal când întâmpini o provocare?</strong></p>
+        <label><input type="radio" name="q3" value="3" required> Dorința de succes și recunoaștere</label><br>
+        <label><input type="radio" name="q3" value="2"> Curiozitatea și dorința de a învăța</label><br>
+        <label><input type="radio" name="q3" value="1"> Nevoia de a contribui și a susține pe alții</label>
+      </li>
+
+      <li style="margin-bottom:20px;">
+        <p><strong>4. Ce fel de feedback te ajută cel mai mult?</strong></p>
+        <label><input type="radio" name="q4" value="3" required> Recunoaștere publică și laude</label><br>
+        <label><input type="radio" name="q4" value="2"> Feedback constructiv și sugestii</label><br>
+        <label><input type="radio" name="q4" value="1"> Încurajări și susținere emoțională</label>
+      </li>
+
+      <li style="margin-bottom:20px;">
+        <p><strong>5. Care frază te reprezintă cel mai bine?</strong></p>
+        <label><input type="radio" name="q5" value="3" required> „Vreau să realizez ceva mare”</label><br>
+        <label><input type="radio" name="q5" value="2"> „Vreau să devin o versiune mai bună a mea”</label><br>
+        <label><input type="radio" name="q5" value="1"> „Vreau să fac lumea un loc mai bun”</label>
+      </li>
+
+    </ol>
+
+    <div style="text-align:center; margin-top: 20px;">
+      <button type="submit" style="background:#2980b9; color:#fff; padding:12px 30px; font-size:1.2rem; border:none; border-radius:8px; cursor:pointer; transition: background-color 0.3s; margin-right: 15px;">
+        Vezi rezultatul
+      </button>
+      <button type="button" id="resetBtn" style="background:#e74c3c; color:#fff; padding:12px 30px; font-size:1.2rem; border:none; border-radius:8px; cursor:pointer; transition: background-color 0.3s;">
+        Resetează quiz-ul
+      </button>
+    </div>
+  </form>
+
+  <div id="quizResult" style="margin-top:30px; font-size:1.3rem; font-weight:600; text-align:center; color:#34495e; opacity: 0; transition: opacity 0.5s ease-in-out;"></div>
+</section>
+
+<script>
+  const form = document.getElementById('quizForm');
+  const resultDiv = document.getElementById('quizResult');
+  const resetBtn = document.getElementById('resetBtn');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    let totalScore = 0;
+    for(let i=1; i<=5; i++){
+      const q = form['q'+i];
+      if(q.value){
+        totalScore += parseInt(q.value);
+      }
+    }
+
+    let message = '';
+    if(totalScore >= 13) {
+      message = 'Ești motivat de succes și recunoaștere! Îți place să setezi obiective clare și să atingi performanțe mari.';
+    } else if(totalScore >= 8) {
+      message = 'Motivația ta vine din dorința de creștere personală și învățare continuă. Ești deschis la adaptare și dezvoltare.';
+    } else {
+      message = 'Ești motivat de dorința de a ajuta și de a face o diferență în lume. Ai o inimă mare și cauți sens în tot ce faci.';
+    }
+
+    resultDiv.textContent = message;
+    resultDiv.style.opacity = '1';
+  });
+
+  resetBtn.addEventListener('click', () => {
+    form.reset();
+    resultDiv.style.opacity = '0';
+    resultDiv.textContent = '';
+  });
+</script>
 
     <section id="contact">
       <h2>Contact</h2>
